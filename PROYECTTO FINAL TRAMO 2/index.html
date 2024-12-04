@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda Deportiva</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+        // Crear un carrito vacío
+        let carrito = [];
+
+        // Función para agregar al carrito
+        function agregarAlCarrito(producto) {
+            carrito.push(producto);
+            actualizarCarrito();
+        }
+
+        // Función para eliminar del carrito
+        function eliminarDelCarrito(producto) {
+            carrito = carrito.filter(item => item !== producto);
+            actualizarCarrito();
+        }
+
+        // Función para actualizar el contador del carrito
+        function actualizarCarrito() {
+            document.getElementById("contadorCarrito").innerText = carrito.length;
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Bienvenidos a la Tienda Deportiva</h1>
+        <div>
+            <span>Productos en el carrito: </span>
+            <span id="contadorCarrito">0</span> <!-- Aquí se mostrará la cantidad de productos en el carrito -->
+        </div>
+    </header>
+    <main>
+        <h2>Productos</h2>
+        <div class="products">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Precio</th>
+                        <th>Imagen</th>
+                        <th>Acciones</th> <!-- Columna para los botones de agregar/eliminar -->
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Camiseta Deportiva</td>
+                        <td>$29.99</td>
+                        <td><img src="images/remera.jpg" alt="Camiseta Deportiva" width="100"></td>
+                        <td>
+                            <button onclick="agregarAlCarrito('Camiseta Deportiva')">Agregar al Carrito</button>
+                            <button onclick="eliminarDelCarrito('Camiseta Deportiva')">Eliminar</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Pantalón Deportivo</td>
+                        <td>$49.99</td>
+                        <td><img src="images/pantalon.jpg" alt="Pantalón Deportivo" width="100"></td>
+                        <td>
+                            <button onclick="agregarAlCarrito('Pantalón Deportivo')">Agregar al Carrito</button>
+                            <button onclick="eliminarDelCarrito('Pantalón Deportivo')">Eliminar</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Zapatillas Running</td>
+                        <td>$89.99</td>
+                        <td><img src="images/zapatillas.jpg" alt="Zapatillas Running" width="100"></td>
+                        <td>
+                            <button onclick="agregarAlCarrito('Zapatillas Running')">Agregar al Carrito</button>
+                            <button onclick="eliminarDelCarrito('Zapatillas Running')">Eliminar</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Chaqueta Deportiva</td>
+                        <td>$59.99</td>
+                        <td><img src="images/campera.jpg" alt="Chaqueta Deportiva" width="100"></td>
+                        <td>
+                            <button onclick="agregarAlCarrito('Chaqueta Deportiva')">Agregar al Carrito</button>
+                            <button onclick="eliminarDelCarrito('Chaqueta Deportiva')">Eliminar</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Gorra Deportiva</td>
+                        <td>$19.99</td>
+                        <td><img src="images/gorra.jpg" alt="Gorra Deportiva" width="100"></td>
+                        <td>
+                            <button onclick="agregarAlCarrito('Gorra Deportiva')">Agregar al Carrito</button>
+                            <button onclick="eliminarDelCarrito('Gorra Deportiva')">Eliminar</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+</body>
+</html>

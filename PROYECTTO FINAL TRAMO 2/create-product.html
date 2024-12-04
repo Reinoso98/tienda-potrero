@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Producto - Tienda de Ropa Deportiva</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Encabezado -->
+    <header>
+        <h1>Crear Nuevo Producto</h1>
+    </header>
+
+    <!-- Contenido principal -->
+    <main>
+        <form action="insert-product.php" method="POST">
+            <h2>Detalles del Producto</h2>
+            
+            <label for="nombre">Nombre del Producto</label>
+            <input type="text" id="nombre" name="nombre" required>
+
+            <label for="descripcion">Descripción</label>
+            <input type="text" id="descripcion" name="descripcion" required>
+
+            <label for="precio">Precio (en $)</label>
+            <input type="number" id="precio" name="precio" required>
+
+            <label for="imagen">URL de Imagen</label>
+            <input type="text" id="imagen" name="imagen" required>
+
+            <button type="submit">Agregar Producto</button>
+        </form>
+    </main>
+
+</body>
+</html>
